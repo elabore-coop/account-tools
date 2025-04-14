@@ -2,6 +2,8 @@
 
 from odoo import models, fields, _, api
 from odoo.exceptions import Warning
+import logging
+_logger = logging.getLogger(__name__)
 
 
 class SaleOrder(models.Model):
@@ -49,9 +51,12 @@ class SaleOrder(models.Model):
                 name = self.analytic_account_id.name.replace(self.name, record.name)
             else:
                 name = "%s: %s" % (self.analytic_account_id.name, record.name)
-            record.analytic_account_id = self.analytic_account_id.copy(
-                default=dict(name=name)
-            )
+            try:
+                copied_account = self.analytic_account_id.copy(default={"name": name})
+                if copied_account:
+                    record.analytic_account_id = copied_account
+            except Exception as e:
+                _logger.error("Failed to copy analytic account for sale order %s: %s", self.name, e)
         return record
 
 

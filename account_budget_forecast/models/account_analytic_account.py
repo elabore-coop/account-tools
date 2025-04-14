@@ -12,43 +12,43 @@ class AccountAnalyticAccount(models.Model):
         "budget.forecast",
         "analytic_id",
         domain=[("budget_category", "=", "manpower")],
-        copy=True,
+        copy=False,
     )
     budget_forecast_material_ids = fields.One2many(
         "budget.forecast",
         "analytic_id",
         domain=[("budget_category", "=", "material")],
-        copy=True,
+        copy=False,
     )
     budget_forecast_equipment_ids = fields.One2many(
         "budget.forecast",
         "analytic_id",
         domain=[("budget_category", "=", "equipment")],
-        copy=True,
+        copy=False,
     )
     budget_forecast_subcontractors_ids = fields.One2many(
         "budget.forecast",
         "analytic_id",
         domain=[("budget_category", "=", "subcontractors")],
-        copy=True,
+        copy=False,
     )
     budget_forecast_delivery_ids = fields.One2many(
         "budget.forecast",
         "analytic_id",
         domain=[("budget_category", "=", "delivery")],
-        copy=True,
+        copy=False,
     )
     budget_forecast_miscellaneous_ids = fields.One2many(
         "budget.forecast",
         "analytic_id",
         domain=[("budget_category", "=", "miscellaneous")],
-        copy=True,
+        copy=False,
     )
     budget_forecast_unplanned_ids = fields.One2many(
         "budget.forecast",
         "analytic_id",
         domain=[("budget_category", "=", "unplanned")],
-        copy=True,
+        copy=False,
     )
     project_section_budget_ids = fields.One2many(
         "budget.forecast",
