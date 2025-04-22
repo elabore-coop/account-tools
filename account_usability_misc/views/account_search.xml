@@ -17,10 +17,7 @@
         <record id="bank_statement_line_form_reconcile_view_inerit" model="ir.ui.view">
             <field name="name">account.bank.statement.line.reconcile.inherit</field>
             <field name="model">account.bank.statement.line</field>
-            <field
-                name="inherit_id"
-                ref="account_reconcile_oca.bank_statement_line_form_reconcile_view"
-            />
+            <field name="inherit_id" ref="account_reconcile_oca.bank_statement_line_form_reconcile_view" />
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='add_account_move_line_id']" position="before">
                     <field name='move_line_journal_type' invisible="1"></field>
@@ -29,14 +26,35 @@
                     <attribute name="context">{
                         'search_default_cash': move_line_journal_type == 'cash',
                         'search_default_purchases': move_line_journal_type == 'purchases',
-                        'search_default_bank': move_line_journal_type == 'bank',
                         'search_default_sales': move_line_journal_type == 'sales',
                         'search_default_general': move_line_journal_type == 'general',
+                        'search_default_reconcile_filter': True,
                         'search_default_partner_id': partner_id,
                         'tree_view_ref': 'account_reconcile_oca.account_move_line_tree_reconcile_view',
                         'search_view_ref': 'account_reconcile_oca.account_move_line_search_reconcile_view'}</attribute>
                 </xpath>
+            </field>
+        </record>
 
+        <record id="account_move_line_search_inerit" model="ir.ui.view">
+            <field name="name">account.move.line.list.reconcile.inherit</field>
+            <field name="model">account.move.line</field>
+            <field name="inherit_id" ref="account_reconcile_oca.account_move_line_tree_reconcile_view" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='date']" position="before">
+                    <field name="reconcile_filter"></field>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="inherit_account_move_line_search_reconcile_view" model="ir.ui.view">
+            <field name="name">account.move.line.search.reconcile.inherit</field>
+            <field name="model">account.move.line</field>
+            <field name="inherit_id" ref="account_reconcile_oca.account_move_line_search_reconcile_view"/>
+            <field name="arch" type="xml">
+                <filter name="sales" position="before">
+                    <filter string="reconcile_filter" name="reconcile_filter" domain="[('reconcile_filter', '=', True)]" context="{'default_reconcile_filter': True}" />
+                </filter>
             </field>
         </record>
     </data>

@@ -3,3 +3,4 @@ account.access_account_bank_statement,account.bank.statement,account.model_accou
 account.access_account_bank_statement_line,account.bank.statement.line,account.model_account_bank_statement_line,account.group_account_user,1,1,1,0
 access_account_bank_statement,account.bank.statement,account.model_account_bank_statement,group_account_super_user,1,1,1,1
 access_account_bank_statement_line,account.bank.statement.line,account.model_account_bank_statement_line,group_account_super_user,1,1,1,1
+access_account_move_line,account.move.line,account.model_account_move_line,group_account_super_user,1,1,1,1
