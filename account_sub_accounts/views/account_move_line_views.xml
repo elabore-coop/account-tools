@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="account_move_line_tree_sub_accounts_view" model="ir.ui.view">
+            <field name="name">Account Move Line sub-accounts tree view</field>
+            <field name="model">account.move.line</field>
+            <field name="inherit_id" ref="account.view_move_line_tree"/>
+            <field name="arch" type="xml">
+              <xpath expr="//field[@name='analytic_distribution']" position="after">
+		<field name="sub_account_customer" optional="hide"/>
+		<field name="sub_account_supplier" optional="hide"/>
+	      </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

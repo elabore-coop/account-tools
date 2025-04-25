@@ -1,0 +1,45 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* account_sub_accounts
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-25 08:27+0000\n"
+"PO-Revision-Date: 2025-04-25 08:27+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_sub_accounts
+#: model:ir.model,name:account_sub_accounts.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: account_sub_accounts
+#: model:ir.model.fields,field_description:account_sub_accounts.field_account_move_line__sub_account_customer
+#: model:ir.model.fields,field_description:account_sub_accounts.field_res_partner__sub_account_customer
+#: model:ir.model.fields,field_description:account_sub_accounts.field_res_users__sub_account_customer
+msgid "Custommer sub-account"
+msgstr ""
+
+#. module: account_sub_accounts
+#: model:ir.model,name:account_sub_accounts.model_account_move_line
+msgid "Journal Item"
+msgstr ""
+
+#. module: account_sub_accounts
+#: model_terms:ir.ui.view,arch_db:account_sub_accounts.res_partner_form_sub_accounts_view
+msgid "Sub-accounts"
+msgstr ""
+
+#. module: account_sub_accounts
+#: model:ir.model.fields,field_description:account_sub_accounts.field_account_move_line__sub_account_supplier
+#: model:ir.model.fields,field_description:account_sub_accounts.field_res_partner__sub_account_supplier
+#: model:ir.model.fields,field_description:account_sub_accounts.field_res_users__sub_account_supplier
+msgid "Supplier sub-account"
+msgstr ""

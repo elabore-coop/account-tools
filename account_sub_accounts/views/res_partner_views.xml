@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="res_partner_form_sub_accounts_view" model="ir.ui.view">
+            <field name="name">Res Partner sub-accounts form view</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="account.view_partner_property_form"/>
+            <field name="arch" type="xml">
+              <xpath expr="//page[@name='accounting']/group" position="inside">
+		<group string="Sub-accounts" name="sub_accounts">
+		  <field name="sub_account_customer" />
+		  <field name="sub_account_supplier" />
+		</group>
+	      </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
