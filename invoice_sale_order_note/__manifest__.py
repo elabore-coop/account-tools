@@ -2,8 +2,8 @@
 {
     "name": "Invoice and sale order note",
     "category": "Account",
-    "version": "16.0.1.0",
-    "summary": "Add note in sale orders and invoices document",
+    "version": "16.0.2.0.0",
+    "summary": "Add note in sale orders, sale orders templates and invoices document",
     "author": "Elabore",
     "website": "https://elabore.coop/",
     "installable": True,
@@ -57,12 +57,14 @@ This module is maintained by ELABORE.
         "base",
         "account",
         "sale",
+        "sale_management",
     ],
     "data": [
         "views/sale_views.xml",
         "views/account_move_views.xml",
         "views/account_invoice_report.xml",
         "views/sale_order_report.xml",
+        "views/sale_order_template_views.xml",
     ],
     "qweb": [],
 }

@@ -2,7 +2,7 @@
 <odoo>
     
     <record id="view_order_form_invoice_sale_order_note" model="ir.ui.view">
-        <field name="name">view.order.form.invoice0sale.order.note</field>
+        <field name="name">view.order.form.invoice.sale.order.note</field>
         <field name="model">sale.order</field>
         <field name="inherit_id" ref="sale.view_order_form" />
         <field name="arch" type="xml">

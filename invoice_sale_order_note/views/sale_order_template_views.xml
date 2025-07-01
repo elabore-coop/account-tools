@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="sale_order_template_view_form_inherit_report_note" model="ir.ui.view">
+        <field name="name">sale.order.template.form.inherit.report.note</field>
+        <field name="inherit_id" ref="sale_management.sale_order_template_view_form"/>
+        <field name="model">sale.order.template</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook[@name='main_book']" position="inside">
+                <page name="note" string="Notes">
+                    <field name="report_note" nolabel="1" colspan="2" />
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
