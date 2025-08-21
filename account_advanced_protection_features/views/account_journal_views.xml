@@ -7,6 +7,9 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='restrict_mode_hash_table']" position="after">
                 <field
+                        name="prevent_deletion_of_posted_account_move"
+                />
+                <field
                         name="prevent_reset_to_draft_sent_invoice"
                         attrs="{'invisible': [('type', '!=', 'sale')]}"
                 />

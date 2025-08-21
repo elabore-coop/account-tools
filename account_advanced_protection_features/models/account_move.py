@@ -16,12 +16,14 @@ class AccountMove(models.Model):
 
     @api.ondelete(at_uninstall=False)
     def _check_posted(self):
-        """ Prevent deletion of a account move if it has been posted
-            exeptions : Check deposit or Cash deposit. In V16 in odoo the account move is deleted
+        """ Prevent deletion of an account move if it has been posted
+            exceptions : Check deposit or Cash deposit. In V16 in odoo the account move is deleted
                         when the check deposit is reset to draft.
                         This work the same with Cash deposit
         """
         for rec in self:
+            if not rec.journal_id.prevent_deletion_of_posted_account_move:
+                continue
 
             is_cash_deposit = False
             is_check_deposit = False
@@ -30,7 +32,7 @@ class AccountMove(models.Model):
             if rec.env.get('account.cash.deposit'):
                 for cash_deposit in rec.env['account.cash.deposit'].search([]):
                     if cash_deposit.move_id == rec:
-                        print (cash_deposit.move_id, rec)
+                        print(cash_deposit.move_id, rec)
                         is_cash_deposit = True
 
             # # search in account.check.deposit if account move is this one
