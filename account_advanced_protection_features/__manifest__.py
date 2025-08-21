@@ -21,6 +21,7 @@
     },
     # always loaded
     "data": [
+        "views/account_journal_views.xml"
     ],
     # only loaded in demonstration mode
     "demo": [],
