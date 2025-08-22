@@ -8,13 +8,16 @@
             <xpath expr="//field[@name='restrict_mode_hash_table']" position="after">
                 <field
                         name="prevent_deletion_of_posted_account_move"
+                        groups="account_advanced_protection_features.group_account_protection_manager"
                 />
                 <field
                         name="prevent_reset_to_draft_sent_invoice"
+                        groups="account_advanced_protection_features.group_account_protection_manager"
                         attrs="{'invisible': [('type', '!=', 'sale')]}"
                 />
                 <field
                         name="allow_bank_statement_deletion"
+                        groups="account_advanced_protection_features.group_account_protection_manager"
                         attrs="{'invisible': [('type', 'not in', ['bank', 'cash'])]}"
                 />
             </xpath>
