@@ -13,6 +13,10 @@
                         name="prevent_reset_to_draft_sent_invoice"
                         attrs="{'invisible': [('type', '!=', 'sale')]}"
                 />
+                <field
+                        name="allow_bank_statement_deletion"
+                        attrs="{'invisible': [('type', 'not in', ['bank', 'cash'])]}"
+                />
             </xpath>
         </field>
     </record>
