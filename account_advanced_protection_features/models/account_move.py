@@ -4,15 +4,12 @@ from odoo.exceptions import UserError
 class AccountMove(models.Model):
     _inherit = 'account.move'
 
-    sent_by_email = fields.Boolean()
-
     def button_draft(self):
-        res = super(AccountMove, self).button_draft()
-        if self.sent_by_email and self.journal_id.prevent_reset_to_draft_sent_invoice:
+        if self.is_move_sent and self.journal_id.prevent_reset_to_draft_sent_invoice:
             raise UserError(_(
                 "You cannot reset to draft this invoice because it has been sent by email."
             ))
-        return res
+        return super(AccountMove, self).button_draft()
 
     @api.ondelete(at_uninstall=False)
     def _check_posted(self):
