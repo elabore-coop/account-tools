@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-22 08:18+0000\n"
-"PO-Revision-Date: 2025-08-22 08:18+0000\n"
+"POT-Creation-Date: 2025-08-29 08:28+0000\n"
+"PO-Revision-Date: 2025-08-29 08:28+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,19 +16,24 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: account_advanced_protection_features
-#: model:res.groups,name:account_advanced_protection_features.group_account_advanced_manager
+#: model:res.groups,name:account_advanced_protection_features.group_account_protection_manager
 msgid "Access to account advanced protection features"
 msgstr "Accès aux fonctionnalités avancées de protection des journaux"
 
 #. module: account_advanced_protection_features
 #: model:ir.model.fields,field_description:account_advanced_protection_features.field_account_journal__allow_bank_statement_deletion
-msgid "Allow bank statement deletion"
+msgid "Allow bank statements deletion"
 msgstr "Autoriser la suppression de relevé bancaire"
 
 #. module: account_advanced_protection_features
 #: model:ir.model,name:account_advanced_protection_features.model_account_bank_statement
 msgid "Bank Statement"
 msgstr "Relevé bancaire"
+
+#. module: account_advanced_protection_features
+#: model:ir.model,name:account_advanced_protection_features.model_account_bank_statement_line
+msgid "Bank Statement Line"
+msgstr "Ligne de relevé de compte"
 
 #. module: account_advanced_protection_features
 #: model:ir.model,name:account_advanced_protection_features.model_account_journal
@@ -51,18 +56,39 @@ msgid "Prevent to reset to draft a sent invoice"
 msgstr "Empêcher la remise en brouillon d'une facture envoyée"
 
 #. module: account_advanced_protection_features
-#: model:ir.model.fields,field_description:account_advanced_protection_features.field_account_bank_statement_line__sent_by_email
-#: model:ir.model.fields,field_description:account_advanced_protection_features.field_account_move__sent_by_email
-#: model:ir.model.fields,field_description:account_advanced_protection_features.field_account_payment__sent_by_email
-msgid "Sent By Email"
-msgstr "Envoyée par email"
-
-#. module: account_advanced_protection_features
 #: model:ir.model.fields,field_description:account_advanced_protection_features.field_account_bank_statement__smart_search
+#: model:ir.model.fields,field_description:account_advanced_protection_features.field_account_bank_statement_line__smart_search
 #: model:ir.model.fields,field_description:account_advanced_protection_features.field_account_journal__smart_search
 #: model:ir.model.fields,field_description:account_advanced_protection_features.field_account_move__smart_search
 msgid "Smart Search"
 msgstr ""
+
+#. module: account_advanced_protection_features
+#. odoo-python
+#: code:addons/account_advanced_protection_features/models/account_bank_statement.py:0
+#, python-format
+msgid ""
+"The deletion of bank statement lines is not allowed for the journal %s."
+msgstr ""
+"La suppression des lignes de relevé bancaire n'est pas autorisée pour le journal %s."
+
+#. module: account_advanced_protection_features
+#. odoo-python
+#: code:addons/account_advanced_protection_features/models/account_bank_statement.py:0
+#, python-format
+msgid "The deletion of bank statements is not allowed for the journal %s."
+msgstr ""
+"La suppression des relevés bancaires n'est pas autorisée pour le journal %s."
+
+#. module: account_advanced_protection_features
+#: model:ir.model.fields,help:account_advanced_protection_features.field_account_journal__allow_bank_statement_deletion
+msgid ""
+"Users with group Show Full Accounting Features (id: group_account_user) will"
+" be allowed to delete account bank statements and bank statement lines."
+msgstr ""
+"Les utilisateurs avec le groupe  'Montrer les fonctions de comptabilité "
+"complètes' seront autorisés à supprimer les relevés bancaires ainsi que les "
+"lignes de relevés bancaires."
 
 #. module: account_advanced_protection_features
 #. odoo-python
