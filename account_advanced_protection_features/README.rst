@@ -5,6 +5,7 @@ account_advanced_protection_features
 This module adds several protection features about accounting :
 * Forbid to delete an invoice that has already been validated
 * Forbid to reset to draft an invoice that has already been sent by email
+* Allow bank statements and bank statement lines deletion
 
 Installation
 ============
@@ -31,6 +32,7 @@ Credits
 Contributors
 ------------
 
+* Laetitia Da Costa (https://github.com/LaetitiaElabore)
 * Boris Gallet - `Email<mailto:boris.gallet@elabore.coop>` - `Github<https://github.com/b0g>`
 * Clément Thomas
 * Quentin Mondot - `Email<mailto:quentin.mondot@elabore.coop>` - `Github<https://github.com/mondot>`

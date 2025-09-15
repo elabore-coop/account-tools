@@ -13,38 +13,11 @@ class AccountMove(models.Model):
 
     @api.ondelete(at_uninstall=False)
     def _check_posted(self):
-        """ Prevent deletion of an account move if it has been posted
-            exceptions : Check deposit or Cash deposit. In V16 in odoo the account move is deleted
-                        when the check deposit is reset to draft.
-                        This work the same with Cash deposit
+        """ Prevent deletion of an account move if it has already been posted and
+        journal parameter prevent_deletion_of_posted_account_move is activated
         """
         for rec in self:
-            if not rec.journal_id.prevent_deletion_of_posted_account_move:
-                continue
-
-            is_cash_deposit = False
-            is_check_deposit = False
-
-            # search in account.cash.deposit if account move is this one
-            if rec.env.get('account.cash.deposit'):
-                for cash_deposit in rec.env['account.cash.deposit'].search([]):
-                    if cash_deposit.move_id == rec:
-                        print(cash_deposit.move_id, rec)
-                        is_cash_deposit = True
-
-            # # search in account.check.deposit if account move is this one
-            if rec.env.get('account.check.deposit'):
-                for check_deposit in rec.env['account.check.deposit'].search([]):
-                    if check_deposit.move_id == rec:
-                        is_check_deposit = True
-
-            if (
-                rec.posted_before and
-                    (
-                    not is_cash_deposit
-                    and not is_check_deposit
-                    )
-                ):
-                raise UserError(_(""
-                    "You cannot delete this account move because it has been posted."
+            if rec.posted_before and rec.journal_id.prevent_deletion_of_posted_account_move:
+                raise UserError(_(
+                    "You cannot delete this account move because it has already been posted."
                 ))
