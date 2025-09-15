@@ -1,0 +1,51 @@
+====================================
+account_advanced_protection_features
+====================================
+
+This module adds several protection features about accounting :
+* Forbid to delete an invoice that has already been validated
+* Forbid to reset to draft an invoice that has already been sent by email
+* Allow bank statements and bank statement lines deletion
+
+Installation
+============
+
+Use Odoo normal module installation procedure to install
+``account_advanced_protection_features``.
+
+Known issues / Roadmap
+======================
+
+None yet.
+
+Bug Tracker
+===========
+
+Bugs are tracked on `our issues website <https://github.com/elabore-coop/account-tools/issues>`_. In case of
+trouble, please check there if your issue has already been
+reported. If you spotted it first, help us smashing it by providing a
+detailed and welcomed feedback.
+
+Credits
+=======
+
+Contributors
+------------
+
+* Laetitia Da Costa (https://github.com/LaetitiaElabore)
+* Boris Gallet - `Email<mailto:boris.gallet@elabore.coop>` - `Github<https://github.com/b0g>`
+* Clément Thomas
+* Quentin Mondot - `Email<mailto:quentin.mondot@elabore.coop>` - `Github<https://github.com/mondot>`
+
+
+Funders
+-------
+
+The development of this module has been financially supported by:
+* Elabore (https://elabore.coop)
+
+
+Maintainer
+----------
+
+This module is maintained by Elabore.

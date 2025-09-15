@@ -1,15 +1,15 @@
-# Copyright 2024 Boris Gallet ()
+# Copyright 2025 Boris Gallet, Clément Thomas, Quentin Mondot
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 {
-    "name": "account_move_protect_deleting",
-    "version": "16.0.1.0.2",
+    "name": "account_advanced_protection_features",
+    "version": "16.0.1.0.0",
     "author": "Elabore",
     "website": "https://elabore.coop",
-    "maintainer": "Boris Gallet",
+    "maintainer": "Quentin Mondot",
     "license": "AGPL-3",
     "category": "Tools",
-    "summary": "Forbid to delete an account move that has already been posted",
+    "summary": "Add several protection features about accounting",
     # any module necessary for this one to work correctly
     "depends": [
         "base",
@@ -21,6 +21,8 @@
     },
     # always loaded
     "data": [
+        "security/res_groups.xml",
+        "views/account_journal_views.xml"
     ],
     # only loaded in demonstration mode
     "demo": [],
